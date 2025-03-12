@@ -54,7 +54,7 @@ def run_gain_scheduled_pid_simulation(v_init=10
     Run and plot a simulation with a gain scheduled PID controller.
     Defined veclocity region:
         For v > 1 (m/s), use gain1
-        For v < 1 (m/s), use gain2
+        For v <= 1 (m/s), use gain2
 
     Args:
         v_init: initial_velocity_mps
@@ -69,7 +69,7 @@ def run_gain_scheduled_pid_simulation(v_init=10
     """
     vehicle = Vehicle(mass_kg=1.0, initial_velocity_mps=v_init, drag_coefficient_kgpm=0.05)
 
-    controller = PIDController(kp=kp, ki=ki, kd=kd, setpoint=setpoint)
+    controller = PIDController(kp=kp[0], ki=ki[0], kd=kd[0], setpoint=setpoint)
     sim = Simulation(vehicle=vehicle, controller=controller)
     sim.run(duration_s=duration_s)
     sim.plot_results(filename=filename)

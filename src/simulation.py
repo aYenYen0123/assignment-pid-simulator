@@ -30,7 +30,7 @@ class Simulation:
         self.velocity_points = []
         self.control_inputs = []
     
-    def run(self, duration_s=100, setpoint=None):
+    def run(self, duration_s=100, setpoint=None, GainSchedule=False):
         """
         Run the simulation for the specified duration.
         
@@ -63,6 +63,8 @@ class Simulation:
             # Calculate control input if controller exists
             control_input = 0.0
             if self.controller:
+                if GainSchedule is True:
+                    # TDOD: Apply gain schedule
                 control_input = self.controller.compute(self.vehicle.velocity_mps, self.dt_s)
             self.control_inputs.append(control_input)
             
