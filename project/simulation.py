@@ -119,8 +119,9 @@ class Simulation:
         # Save plot if filename is provided
         if filename:
             plt.savefig(filename)
-            
-        plt.show()
+            plt.close()
+        else:
+            plt.show()
         
     def find_settling_time(self, setpoint, error_threshold_percent=1.0):
         """

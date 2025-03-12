@@ -49,8 +49,8 @@ def run_pid_controlled_simulation(kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration
 if __name__ == "__main__":
     # Run the uncontrolled simulation
     print("Running uncontrolled simulation...")
-    sim_uncontrolled = run_uncontrolled_simulation()
+    # sim_uncontrolled = run_uncontrolled_simulation()
     
     # Run the PID controlled simulation
     print("\nRunning PID controlled simulation...")
-    sim_controlled = run_pid_controlled_simulation(kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration_s=100)
+    sim_controlled = run_pid_controlled_simulation(kp=0.3, ki=0.2, kd=0, setpoint=5.0, duration_s=100)
