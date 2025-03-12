@@ -16,11 +16,12 @@ def run_uncontrolled_simulation():
     return sim
 
 
-def run_pid_controlled_simulation(kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration_s=100):
+def run_pid_controlled_simulation(v_init=10, kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration_s=100):
     """
     Run and plot a simulation with a PID controller.
     
     Args:
+        v_init: initial_velocity_mps
         kp: Proportional gain
         ki: Integral gain
         kd: Derivative gain
@@ -30,7 +31,7 @@ def run_pid_controlled_simulation(kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration
     Returns:
         Simulation: The completed simulation object
     """
-    vehicle = Vehicle(mass_kg=1.0, initial_velocity_mps=10.0, drag_coefficient_kgpm=0.05)
+    vehicle = Vehicle(mass_kg=1.0, initial_velocity_mps=v_init, drag_coefficient_kgpm=0.05)
     controller = PIDController(kp=kp, ki=ki, kd=kd, setpoint=setpoint)
     sim = Simulation(vehicle=vehicle, controller=controller)
     sim.run(duration_s=duration_s)
@@ -45,7 +46,6 @@ def run_pid_controlled_simulation(kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration
     
     return sim
 
-
 if __name__ == "__main__":
     # Run the uncontrolled simulation
     print("Running uncontrolled simulation...")
@@ -53,4 +53,4 @@ if __name__ == "__main__":
     
     # Run the PID controlled simulation
     print("\nRunning PID controlled simulation...")
-    sim_controlled = run_pid_controlled_simulation(kp=0.3, ki=0.2, kd=0, setpoint=5.0, duration_s=100)
+    sim_controlled = run_pid_controlled_simulation(v_init=6, kp=0.3, ki=0.2, kd=0, setpoint=5.0, duration_s=100)
