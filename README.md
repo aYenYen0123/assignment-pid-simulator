@@ -67,5 +67,5 @@ Based on the judgement above, the selected gain should be robust for lower initi
 #### Method 2: Gain Scheduling
 To improve the control performance throughout all velocity region, we can apply a simple gain schedule
 - For v > 1 (m/s), larger Kp, Ki preffered
-- For v > 1 (m/s), smaller Kp, Ki preffered
+- For v <> 1 (m/s), smaller Kp, Ki preffered
 
