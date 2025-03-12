@@ -53,4 +53,4 @@ if __name__ == "__main__":
     
     # Run the PID controlled simulation
     print("\nRunning PID controlled simulation...")
-    sim_controlled = run_pid_controlled_simulation(v_init=6, kp=0.3, ki=0.2, kd=0, setpoint=5.0, duration_s=100)
+    sim_controlled = run_pid_controlled_simulation(v_init=6, kp=1, ki=0.6, kd=0, setpoint=5.0, duration_s=100)
