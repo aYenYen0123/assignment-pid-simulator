@@ -100,7 +100,8 @@ class Simulation:
 
             # Plot controller gains
             props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-            plt.text(70, 8, f"Kp = {self.controller.kp}\nKi = {self.controller.ki}\nKd = {self.controller.kd}", fontsize=12, bbox=props)
+            plt.text(0.8, 0.8, f"Kp = {self.controller.kp}\nKi = {self.controller.ki}\nKd = {self.controller.kd}"
+                     , fontsize=12, bbox=props)
         
         plt.grid(True)
         plt.xlabel('Time (s)')
