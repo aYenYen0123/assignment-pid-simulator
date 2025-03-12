@@ -57,7 +57,7 @@ def test_update_with_no_external_force():
     # New velocity = 10.0 + (-5.0 * 1.0) = 5.0 m/s
     expected_velocity = 5.0
     
-    new_velocity = vehicle.update(external_force_n=0.0, dt_s=1.0)
+    new_velocity = vehicle.update_state(external_force_n=0.0, dt_s=1.0)
     
     assert new_velocity == pytest.approx(expected_velocity)
     assert vehicle.velocity_mps == pytest.approx(expected_velocity)
@@ -74,7 +74,7 @@ def test_update_with_external_force():
     # New velocity = 10.0 + (5.0 * 1.0) = 15.0 m/s
     expected_velocity = 15.0
     
-    new_velocity = vehicle.update(external_force_n=10.0, dt_s=1.0)
+    new_velocity = vehicle.update_state(external_force_n=10.0, dt_s=1.0)
     
     assert new_velocity == pytest.approx(expected_velocity)
     assert vehicle.velocity_mps == pytest.approx(expected_velocity)
@@ -90,7 +90,7 @@ def test_update_with_different_time_step():
     # New velocity = 10.0 + (-5.0 * 0.5) = 7.5 m/s
     expected_velocity = 7.5
     
-    new_velocity = vehicle.update(external_force_n=0.0, dt_s=0.5)
+    new_velocity = vehicle.update_state(external_force_n=0.0, dt_s=0.5)
     
     assert new_velocity == pytest.approx(expected_velocity)
     assert vehicle.velocity_mps == pytest.approx(expected_velocity)
