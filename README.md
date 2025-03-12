@@ -27,7 +27,7 @@ subject to a force which is a function of its velocity:
 ### 0. Simulation implementation & unit test
 See Class Diagram_Vehicle Dynamic with PID control.png for class design
 
-![Class_Diagram](./Class Diagram_Vehicle Dynamic with PID control.png)
+![Class_Diagram](./Class%20Diagram_Vehicle%20Dynamic%20with%20PID%20control.png)
 
 All unit test int ./tests/ are passed with pytest
 --- 
