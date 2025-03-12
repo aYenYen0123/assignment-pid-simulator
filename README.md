@@ -69,4 +69,4 @@ To improve the control performance throughout all velocity region, we can apply 
 - For v > 1 (m/s), larger Kp, Ki preffered
 - For v <= 1 (m/s), smaller Kp, Ki preffered
 
---> Not implemented in 
+--> Not implemented in this package
