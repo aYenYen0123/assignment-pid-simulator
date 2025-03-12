@@ -97,6 +97,10 @@ class Simulation:
             plt.axhline(y=self.controller.setpoint + error_threshold, color='g', linestyle=':',
                         label=f'1% Error Threshold')
             plt.axhline(y=self.controller.setpoint - error_threshold, color='g', linestyle=':')
+
+            # Plot controller gains
+            props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+            plt.text(70, 8, f"Kp = {self.controller.kp}\nKi = {self.controller.ki}\nKd = {self.controller.kd}", fontsize=12, bbox=props)
         
         plt.grid(True)
         plt.xlabel('Time (s)')
