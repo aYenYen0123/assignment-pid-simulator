@@ -1,5 +1,4 @@
-# iSpace
-For assignments of iSapce
+# assignment-pid-simulator
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 I would like you to write a python script(s) to solve a problem.
