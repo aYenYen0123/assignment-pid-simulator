@@ -5,18 +5,18 @@ from vehicle_dynamics import Vehicle
 from pid_controller import PIDController
 from simulation import Simulation
 
-def run_uncontrolled_simulation(v_init=10, duration_s=100):
+def run_uncontrolled_simulation(v_init=10, duration_s=100, filename="uncontrolled_velocity.png"):
     """
     Run and plot a simulation without a controller.
     """
     vehicle = Vehicle(mass_kg=1.0, initial_velocity_mps=v_init, drag_coefficient_kgpm=0.05)
     sim = Simulation(vehicle=vehicle)
     sim.run(duration_s=100)
-    sim.plot_results(filename="uncontrolled_velocity.png")
+    sim.plot_results(filename=filename)
     return sim
 
 
-def run_pid_controlled_simulation(v_init=10, kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration_s=100):
+def run_pid_controlled_simulation(v_init=10, kp=2.0, ki=0.1, kd=1.0, setpoint=5.0, duration_s=100, filename="pid_controlled_velocity.png"):
     """
     Run and plot a simulation with a PID controller.
     
@@ -35,7 +35,7 @@ def run_pid_controlled_simulation(v_init=10, kp=2.0, ki=0.1, kd=1.0, setpoint=5.
     controller = PIDController(kp=kp, ki=ki, kd=kd, setpoint=setpoint)
     sim = Simulation(vehicle=vehicle, controller=controller)
     sim.run(duration_s=duration_s)
-    sim.plot_results(filename="pid_controlled_velocity.png")
+    sim.plot_results(filename=filename)
     
     # Report settling time
     settling_time = sim.find_settling_time(setpoint, error_threshold_percent=1.0)
